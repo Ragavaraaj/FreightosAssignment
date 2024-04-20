@@ -23,7 +23,7 @@ export const Pagination = ({
     if (Math.floor(currentPage / 5) === 0) {
       return page + 1;
     } else {
-      return page + Math.floor(currentPage / 5) * 5;
+      return page - 1 + Math.floor(currentPage / 5) * 5;
     }
   };
 
@@ -55,7 +55,7 @@ export const Pagination = ({
             </PaginationItem>
           </>
         )}
-        {Array.from({ length: 6 }, (_, i) =>
+        {Array.from({ length: 7 }, (_, i) =>
           pageCalculator(i) < totalPages + 1 ? (
             <PaginationItem key={i}>
               <PaginationLink
