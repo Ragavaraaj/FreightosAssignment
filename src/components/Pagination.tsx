@@ -36,7 +36,7 @@ export const Pagination = ({
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious
-            onClick={() => handlePageChange(currentPage - 1)}
+            onClick={() => currentPage > 1 && handlePageChange(currentPage - 1)}
           />
         </PaginationItem>
         {currentPage >= 5 && (
@@ -88,7 +88,11 @@ export const Pagination = ({
           </>
         )}
         <PaginationItem>
-          <PaginationNext onClick={() => handlePageChange(currentPage + 1)} />
+          <PaginationNext
+            onClick={() =>
+              totalPages > currentPage && handlePageChange(currentPage + 1)
+            }
+          />
         </PaginationItem>
       </PaginationContent>
     </PaginationWrapper>
