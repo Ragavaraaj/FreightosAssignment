@@ -22,13 +22,11 @@ export const Home = () => {
   return (
     <div className="p-4">
       <h1 className="mb-8 text-5xl font-bold">The Rick and Morty Characters</h1>
-      <div className="flex flex-wrap gap-4">
-        <CharacterList
-          loading={isPending}
-          error={isError}
-          characters={data?.results}
-        />
-      </div>
+      <CharacterList
+        loading={isPending}
+        error={isError}
+        characters={data?.results}
+      />
       <Pagination
         currentPage={currentPage}
         handlePageChange={handlePageChange}
